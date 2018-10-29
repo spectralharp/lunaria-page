@@ -17,15 +17,6 @@
 */
 @import url('https://fonts.googleapis.com/css?family=Lato');
 /*General Styling*/
-* {
-  /*
-     I removed the resetting of margin and padding
-     Turns out that the weird white space was the 8px
-     margin of the body
-  */
-  /* This is still very useful */
-  box-sizing: border-box;
-}
 
 body {
   /* Fixing the weird white space */
@@ -60,7 +51,7 @@ ol, ul {
 }
 
 section, header, footer {
-  background-color: #182c46;
+  background-color: #00152d;
   color: #e5f5f6;
   font-family:  'Lato', Helvetica, sans-serif;
   height: 100vh;
@@ -74,7 +65,35 @@ header {
   background-image: url("images/background.png");
   background-repeat: repeat-x;
   background-size: cover;
-  padding: 10% 5%;
+
+  height: 1100px;
+  overflow: hidden;
+  position: relative;
+  z-index: -4;
+}
+
+.layer {
+  background-position: bottom center;
+  background-size: auto;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 1100px;
+  position: fixed;
+}
+
+#layer-foreground {
+  background-image: url("images/Foreground.png");
+  z-index: -1;
+}
+
+#layer-harper {
+  background-image: url("images/Harper.png");
+  z-index: -2;
+}
+
+#layer-mountain {
+  background-image: url("images/Mountain.png");
+  z-index: -3;
 }
 
 header p {
