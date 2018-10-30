@@ -24,8 +24,8 @@ body {
 }
 
 h1 {
-  font-size: 8em;
-  margin: 0;
+  text-align: center;
+  font-size: 3em;
 }
 
 h2 {
@@ -64,7 +64,7 @@ section {
 header {
   background-image: url("images/background.png");
   background-repeat: repeat-x;
-  background-position: bottom center;
+  background-position: top center;
   background-size: 100vw auto;
 
   background-color: #543a54;
@@ -114,7 +114,9 @@ header {
   z-index: 1;
 
   animation-name: fade-in;
+  animation-delay: 0.2s;
   animation-duration: 1s;
+  animation-fill-mode: both;
 }
 
 #layer-moon {
@@ -135,6 +137,25 @@ header h1+p {
   */
   font-size: 2em;
   font-weight: bold;
+}
+
+#header-mobile {
+  display: none;
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  background-image: url("images/background_mobile.png");
+  height: 576px;
+}
+
+@media all and (max-width: 1024px) {
+  header
+  {
+    display: none;
+  }
+  #header-mobile
+  {
+    display: block;
+  }
 }
 
 footer {
@@ -206,12 +227,10 @@ section > div p {
 @keyframes fade-in {
   from
   {
-    transform: translateY(10px);
     opacity: 0;
   }
   to
   {
-    transform: none;
     opacity: 1;
   }
 }
