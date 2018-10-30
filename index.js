@@ -10,7 +10,6 @@
   function handleScroll() {
     let topDistance = window.scrollY;
     let layers = qsa(".layer");
-    console.log(layers);
     for(let i = 0; i < layers.length; i++) {
       let scroll = layers[i].getAttribute("data-scroll");
       let movement = -(topDistance * scroll);
@@ -21,6 +20,10 @@
 
   function qsa(query) {
     return document.querySelectorAll(query);
+  }
+
+  function $(id) {
+    return document.getElementById(id);
   }
 
 })();
